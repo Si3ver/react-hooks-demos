@@ -2,10 +2,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./styles.css";
 import Counter from "./01/Counter";
 import UserList from "./01/UserList";
+import HocWithWindowSize from "./02/HocWindowSize";
+import HooksWithWindowSize from "./02/HooksWindowSize";
 
 const routes = [
   ["01 Counter", Counter],
   ["01 UserList", UserList],
+  ["02 HOC", HocWithWindowSize],
+  ["02 Hooks", HooksWithWindowSize],
 ];
 
 export default function App() {
@@ -14,7 +18,7 @@ export default function App() {
       <div className="app">
         <ul className="sider">
           {routes.map(([label]) => (
-            <li>
+            <li key={label}>
               <Link to={`/${label.replace(" ", "/")}`}>{label}</Link>
             </li>
           ))}
@@ -22,7 +26,7 @@ export default function App() {
         <div className="page-container">
           <Switch>
             {routes.map(([label, Component]) => (
-              <Route path={`/${label.replace(" ", "/")}`}>
+              <Route path={`/${label.replace(" ", "/")}`} key={label}>
                 <Component />
               </Route>
             ))}
