@@ -13,3 +13,4 @@ $ npm run start
 + [HOC方式传递window属性](./src/02/HocWindowSize.js)
 + [Hooks方式传递window属性](./src/02/HooksWindowSize.js)
 + [测试useEffect组件](./src/03/UseEffect.js)
++ [在类组件中使用自定义Hook](./src/03/CusHookInClassComp.js)

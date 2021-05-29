@@ -5,6 +5,7 @@ import UserList from "./01/UserList";
 import HocWithWindowSize from "./02/HocWindowSize";
 import HooksWithWindowSize from "./02/HooksWindowSize";
 import UseEffect from "./03/UseEffect";
+import CusHookInClassComp from "./03/CusHookInClassComp";
 
 const routes = [
   ["01 Counter", Counter],
@@ -12,6 +13,7 @@ const routes = [
   ["02 HOC", HocWithWindowSize],
   ["02 Hooks", HooksWithWindowSize],
   ["03 UseEffect", UseEffect],
+  ["03 WindowSize", CusHookInClassComp],
 ];
 
 export default function App() {
