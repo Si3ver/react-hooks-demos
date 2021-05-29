@@ -1,12 +1,12 @@
 // HOC
-import React from 'react'
+import { Component, PureComponent } from 'react'
 
 /**
  * HOC: 给子组件传递窗口大小
  */
 const withWindowSize = Component => {
   // 产生一个高阶组件 WrappedComponent，只包含监听窗口大小的逻辑
-  class WrappedComponent extends React.PureComponent {
+  class WrappedComponent extends PureComponent {
     constructor(props) {
       super(props);
       this.state = {
@@ -14,7 +14,7 @@ const withWindowSize = Component => {
       };
     }
     componentDidMount() {
-      window.addEventListener("resize", this.handleResize); 
+      window.addEventListener("resize", this.handleResize);
     }
     componentWillUnmount() {
       window.removeEventListener("resize", this.handleResize);
@@ -22,7 +22,7 @@ const withWindowSize = Component => {
     getSize() {
       return window.innerWidth > 1000 ? "large" : "small";
     }
-    handleResize = ()=> {
+    handleResize = () => {
       this.setState({
         size: this.getSize()
       });
@@ -36,8 +36,8 @@ const withWindowSize = Component => {
 };
 
 
-class MyComponent extends React.Component {
-  constructor (props) {
+class MyComponent extends Component {
+  constructor(props) {
     super(props)
     console.log(props)
   }
@@ -48,4 +48,4 @@ class MyComponent extends React.Component {
 }
 
 // 使用 withWindowSize 产生高阶组件，用于产生 size 属性传递给真正的业务组件
-export default withWindowSize(MyComponent); 
+export default withWindowSize(MyComponent);

@@ -1,6 +1,5 @@
 // 在class组件中使用自定义hooks: HOC
-
-import React from 'react';
+import { Component } from 'react';
 import { useWindowSize } from '../hooks/useWindowSize'
 
 // 利用HOC封装
@@ -11,9 +10,9 @@ const withWindowSize = (Comp) => {
   }
 }
 
-class MyComp extends React.Component {
+class MyComp extends Component {
   render() {
-    const {windowSize} = this.props
+    const { windowSize } = this.props
     return (<div>Current Window Size: {windowSize}</div>)
   }
 }

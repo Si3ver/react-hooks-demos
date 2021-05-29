@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 
 function CountLabel({ count }) {
   const color = count > 10 ? "red" : "blue";
@@ -6,7 +6,7 @@ function CountLabel({ count }) {
 }
 
 export default function Counter() {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = useState(0);
 
   return (
     <div>

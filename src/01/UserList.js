@@ -1,6 +1,3 @@
-
-import React from "react";
-
 export default function UserList() {
   // 使用三个 state 分别保存用户列表，loading 状态和错误状态
   const [users, setUsers] = React.useState([]);
@@ -27,7 +24,7 @@ export default function UserList() {
       <button onClick={fetchUsers} disabled={loading}>
         {loading ? "Loading..." : "Show Users"}
       </button>
-      {error && 
+      {error &&
         <div style={{ color: "red" }}>Failed: {String(error)}</div>
       }
       <br />

@@ -1,5 +1,5 @@
 // Hook
-import {useWindowSize} from '../hooks/useWindowSize'
+import { useWindowSize } from '../hooks/useWindowSize'
 
 export default () => {
   const size = useWindowSize();

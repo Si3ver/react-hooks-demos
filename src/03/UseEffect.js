@@ -33,13 +33,13 @@ function TestDeps() {
     <>
       <h2>测试useEffect依赖数组</h2>
       <button onClick={() => {
-        setCount1(prevCount=>prevCount + 1)
+        setCount1(prevCount => prevCount + 1)
       }}>
         Count1: {count1}
       </button>
       <br />
       <button onClick={() => {
-        setCount2(prevCount=>prevCount + 1)
+        setCount2(prevCount => prevCount + 1)
       }}>
         Count2: {count2}
       </button>
@@ -59,14 +59,14 @@ function Sample1() {
   return (
     <>
       <h2>依赖基本类型</h2>
-      <button onClick={() => {setCount(prev => prev + 1)}}>change count: {count}</button>
+      <button onClick={() => { setCount(prev => prev + 1) }}>change count: {count}</button>
     </>
   )
 }
 
 // 依赖引用类型
 function Sample2() {
-  const [todos, setTodos] = useState([{text: 'learn hooks!'}])
+  const [todos, setTodos] = useState([{ text: 'learn hooks!' }])
 
   useEffect(() => {
     console.log('Todos changed.');
@@ -75,7 +75,7 @@ function Sample2() {
   const changeTodo = () => {
     setTodos(prev => {
       // prev.push({text: 'new items!'});     // 操作原对象，无法触发 useEffect
-      prev = [...prev, {text: 'new item!'}]   // 构造新对象，可以触发 useEffect
+      prev = [...prev, { text: 'new item!' }]   // 构造新对象，可以触发 useEffect
       return prev
     })
     console.log(todos)
