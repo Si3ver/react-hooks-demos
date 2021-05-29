@@ -5,7 +5,7 @@ export default () => {
   const size = useWindowSize();
   return (
     <div>
-      Current Window Size:
+      [Custom Hooks] Current Window Size:
       {' '}
       {size}
     </div>

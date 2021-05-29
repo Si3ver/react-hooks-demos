@@ -13,7 +13,7 @@ class MyComp extends Component {
     const { windowSize } = this.props;
     return (
       <div>
-        Current Window Size:
+        [use Custom Hooks in Class Comp] Current Window Size:
         {' '}
         {windowSize}
       </div>

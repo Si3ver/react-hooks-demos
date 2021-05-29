@@ -1,49 +1,55 @@
 // HOC
-import { Component, PureComponent } from 'react'
+import { Component, PureComponent } from 'react';
+
+function getSize() {
+  return window.innerWidth > 1000 ? 'large' : 'small';
+}
 
 /**
  * HOC: 给子组件传递窗口大小
  */
-const withWindowSize = Component => {
-  // 产生一个高阶组件 WrappedComponent，只包含监听窗口大小的逻辑
+const withWindowSize = (Comp) => {
   class WrappedComponent extends PureComponent {
     constructor(props) {
       super(props);
       this.state = {
-        size: this.getSize()
+        size: getSize(),
       };
     }
+
     componentDidMount() {
-      window.addEventListener("resize", this.handleResize);
+      window.addEventListener('resize', this.handleResize);
     }
+
     componentWillUnmount() {
-      window.removeEventListener("resize", this.handleResize);
+      window.removeEventListener('resize', this.handleResize);
     }
-    getSize() {
-      return window.innerWidth > 1000 ? "large" : "small";
-    }
+
     handleResize = () => {
+      console.log(this);
       this.setState({
-        size: this.getSize()
+        size: getSize(),
       });
     }
+
     render() {
-      // 将窗口大小传递给真正的业务逻辑组件
-      return <Component size={this.state.size} />;
+      const { size } = this.state;
+      return <Comp size={size} />;
     }
   }
   return WrappedComponent;
 };
 
-
 class MyComponent extends Component {
-  constructor(props) {
-    super(props)
-    console.log(props)
-  }
-
   render() {
-    return (<div>Current Window Size: {this.props.size}</div>)
+    const { size } = this.props;
+    return (
+      <div>
+        [HOC] Current Window Size:
+        {' '}
+        {size}
+      </div>
+    );
   }
 }
 

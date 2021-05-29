@@ -83,11 +83,7 @@ function Sample2() {
   }, [todos]);
 
   const changeTodo = () => {
-    setTodos((prev) => {
-      // prev.push({text: 'new items!'});     // 操作原对象，无法触发 useEffect
-      prev = [...prev, { text: 'new item!' }]; // 构造新对象，可以触发 useEffect
-      return prev;
-    });
+    setTodos((prev) => [...prev, { text: 'new item!' }]);
     console.log(todos);
   };
 
