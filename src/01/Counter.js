@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function CountLabel({ count }) {
-  const color = count > 10 ? "red" : "blue";
+  const color = count > 10 ? 'red' : 'blue';
   return <span style={{ color }}>{count}</span>;
 }
 

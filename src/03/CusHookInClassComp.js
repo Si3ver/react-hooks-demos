@@ -1,20 +1,24 @@
 // 在class组件中使用自定义hooks: HOC
 import { Component } from 'react';
-import { useWindowSize } from '../hooks/useWindowSize'
+import { useWindowSize } from '../hooks/useWindowSize';
 
 // 利用HOC封装
-const withWindowSize = (Comp) => {
-  return props => {
-    const windowSize = useWindowSize();
-    return <Comp windowSize={windowSize} {...props} />
-  }
-}
+const withWindowSize = (Comp) => (props) => {
+  const windowSize = useWindowSize();
+  return <Comp windowSize={windowSize} {...props} />;
+};
 
 class MyComp extends Component {
   render() {
-    const { windowSize } = this.props
-    return (<div>Current Window Size: {windowSize}</div>)
+    const { windowSize } = this.props;
+    return (
+      <div>
+        Current Window Size:
+        {' '}
+        {windowSize}
+      </div>
+    );
   }
 }
 
-export default withWindowSize(MyComp)
+export default withWindowSize(MyComp);
