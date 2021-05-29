@@ -8,6 +8,7 @@ import HocWithWindowSize from './02/HocWindowSize';
 import HooksWithWindowSize from './02/HooksWindowSize';
 import UseEffect from './03/UseEffect';
 import CusHookInClassComp from './03/CusHookInClassComp';
+import BlogView from './03/BlogView';
 
 const routes = [
   ['01 Counter', Counter],
@@ -16,6 +17,7 @@ const routes = [
   ['02 Hooks', HooksWithWindowSize],
   ['03 UseEffect', UseEffect],
   ['03 WindowSize', CusHookInClassComp],
+  ['03 BlogView', BlogView],
 ];
 
 export default function App() {
