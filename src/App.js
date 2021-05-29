@@ -4,12 +4,14 @@ import Counter from "./01/Counter";
 import UserList from "./01/UserList";
 import HocWithWindowSize from "./02/HocWindowSize";
 import HooksWithWindowSize from "./02/HooksWindowSize";
+import UseEffect from "./03/UseEffect";
 
 const routes = [
   ["01 Counter", Counter],
   ["01 UserList", UserList],
   ["02 HOC", HocWithWindowSize],
   ["02 Hooks", HooksWithWindowSize],
+  ["03 UseEffect", UseEffect],
 ];
 
 export default function App() {
