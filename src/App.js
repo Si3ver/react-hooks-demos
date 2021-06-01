@@ -9,6 +9,10 @@ import HooksWithWindowSize from './02/HooksWindowSize';
 import UseEffect from './03/UseEffect';
 import CusHookInClassComp from './03/CusHookInClassComp';
 import BlogView from './03/BlogView';
+import UseCallback from './04/UseCallbackDemo';
+import UseMemo from './04/UseMemoDemo';
+import UseRef from './04/UseRefDemo';
+import UseContext from './04/UseContextDemo';
 
 const routes = [
   ['01 Counter', Counter],
@@ -18,6 +22,10 @@ const routes = [
   ['03 UseEffect', UseEffect],
   ['03 WindowSize', CusHookInClassComp],
   ['03 BlogView', BlogView],
+  ['04 UseCallback', UseCallback],
+  ['04 UseMemo', UseMemo],
+  ['04 UseRef', UseRef],
+  ['04 UseContext', UseContext],
 ];
 
 export default function App() {
